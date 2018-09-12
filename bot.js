@@ -47,10 +47,9 @@ client.on('message', msg => {
       const ozelmesajkontrol = new Discord.RichEmbed()
     .addField(':warning: Uyarı :warning:', 'Bu komutu özel mesajlarda kullanamazsın.');
     msg.author.sendEmbed(ozelmesajkontrol) }
-    if (msg.channel.type !== "dm") {
     msg.reply('```/sunucubilgi - Sunucunu Detaylarını gösterir.\n/ping - Pinginizi Gösterir. \n/avatar - Avatarınızı gösterir. \n/rastgelegif - Rastgele Gif gönderir. \n/botbilgi - Botun bilgilerini gösterir. \nKomutlar listesini okuduğun için teşekkürler. Orange```');
   }
-}});
+});
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix + 'ping') {
     if (msg.channel.type == "dm") {
