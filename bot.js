@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 let prefix = "!";
 const fs = require("fs");
-client.login('NDg4NDgwNTAzMzY4OTA4ODEz.Dnm4Pg.t3syXsYN9huQprrRfmK7xQaPfLA');
+client.login(process.env.BOT_TOKEN);
 client.on('ready', () => {
 client.user.setGame('!sunucubilgi || !avatar || !ping', 'https://twitch.tv/zorobot0')
   console.log(`${client.user.tag} Olarak basariyla giris yaptiniz.`);
