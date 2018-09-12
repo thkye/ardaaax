@@ -6,7 +6,6 @@ client.login(process.env.BOT_TOKEN);
 client.on('ready', () => {
 client.user.setGame('!sunucubilgi || !avatar || !ping', 'https://twitch.tv/zorobot0')
   console.log(`${client.user.tag} Olarak basariyla giris yaptiniz.`);
-});
 client.on('message', msg => {
   if (msg.content === 'Selamun aleyküm') {
     msg.reply('Aleyküm selam hoş geldin.');
@@ -44,13 +43,14 @@ client.on('message', msg => {
 });
 client.on('message', msg => {
   if (msg.content === prefix + 'komutlar') {
-    if  (msg.channel.type === 'dm') {
-      const ozelmesajuyarii = new Discord.RichEmbed()
-    .addField(':warning: Uyarı :warning:', 'Bu komutu özel mesajlarda kullanamazsın.')
-    msg.author.sendEmbed(ozelmesajuyarii); }
+    if (msg.channel.type == "dm") {
+      const ozelmesajkontrol = new Discord.RichEmbed()
+    .addField(':warning: Uyarı :warning:', 'Bu komutu özel mesajlarda kullanamazsın.');
+    msg.author.sendEmbed(ozelmesajkontrol) }
+    if (msg.channel.type !== "dm") {
     msg.reply('```/sunucubilgi - Sunucunu Detaylarını gösterir.\n/ping - Pinginizi Gösterir. \n/avatar - Avatarınızı gösterir. \n/rastgelegif - Rastgele Gif gönderir. \n/botbilgi - Botun bilgilerini gösterir. \nKomutlar listesini okuduğun için teşekkürler. Orange```');
   }
-});
+}});
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix + 'ping') {
     if (msg.channel.type == "dm") {
